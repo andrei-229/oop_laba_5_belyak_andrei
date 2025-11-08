@@ -42,7 +42,6 @@ int main()
     std::cout << "--- Complex type demo (Person) ---\n";
     {
         PmrStack<Person> ps(&rmr);
-        // create pmr strings that use the same resource
         std::pmr::string n1("Alice", &rmr);
         std::pmr::string n2("Bob", &rmr);
         std::pmr::string n3("Carol", &rmr);

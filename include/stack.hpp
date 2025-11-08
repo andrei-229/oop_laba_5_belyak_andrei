@@ -1,8 +1,3 @@
-// stack.hpp
-// Simple single-linked stack container using std::pmr::polymorphic_allocator
-// Each node is allocated separately using the provided memory_resource via
-// polymorphic_allocator. Iterator models std::forward_iterator_tag.
-
 #pragma once
 
 #include <memory_resource>
@@ -40,7 +35,6 @@ public:
         clear();
     }
 
-    // non-copyable for simplicity (can be implemented later)
     PmrStack(const PmrStack &) = delete;
     PmrStack &operator=(const PmrStack &) = delete;
 
@@ -65,7 +59,6 @@ public:
         return *this;
     }
 
-    // push copies
     void push(const T &value)
     {
         emplace(value);
@@ -124,7 +117,6 @@ public:
             pop();
     }
 
-    // iterator
     class iterator
     {
         Node *cur_ = nullptr;
